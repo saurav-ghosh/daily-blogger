@@ -16,7 +16,7 @@ const NewBlog = () => {
         formData.append("desc", data.desc);
         formData.append("date", new Date().toDateString());
 
-        fetch("http://localhost:5050/publishBlog", {
+        fetch("https://aqueous-sierra-65568.herokuapp.com/publishBlog", {
             method: "POST",
             body: formData,
         })
