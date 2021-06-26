@@ -1,0 +1,12 @@
+.topHeader-title {
+    font-size: 60px;
+    color: #ff8770;
+    letter-spacing: 2px;
+}
+.topHeader-desc {
+    color: gray;
+    letter-spacing: 2px;
+}
+.topHeader {
+    margin-bottom: 40px;
+}
