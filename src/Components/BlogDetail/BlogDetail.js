@@ -1,19 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import "./BlogDetail.css";
 
 const BlogDetail = () => {
-    // const { id } = useParams();
-    // // const [blog, setBlog] = useState();
-    // useEffect(() => {
-    //     const uri = `http://localhost:5050/blogDetail/${id}`;
-    //     fetch(uri)
-    //         .then((res) => res.json)
-    //         .then((data) => console.log(data));
-    // });
+    const { id } = useParams();
+    const [blogDetail, setBlogDetail] = useState({});
+    useEffect(() => {
+        fetch(`http://localhost:5050/blogDetail/${id}`)
+            .then((res) => res.json())
+            .then((data) => setBlogDetail(data));
+    });
 
     return (
-        <div>
-            <h1>this is blogDetail</h1>
-        </div>
+        <>
+            <div className="blogDetail-image">
+                <img
+                    className="img-fluid "
+                    src={`data:image/jpeg;base64,${blogDetail.image.img}`}
+                    alt="..."
+                />
+            </div>
+            <p>{blogDetail.desc}</p>
+        </>
     );
 };
 
