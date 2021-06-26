@@ -6,7 +6,7 @@ const BlogDetail = () => {
     const { id } = useParams();
     const [blogDetail, setBlogDetail] = useState({});
     useEffect(() => {
-        fetch(`http://localhost:5050/blogDetail/${id}`)
+        fetch(`https://aqueous-sierra-65568.herokuapp.com/blogDetail/${id}`)
             .then((res) => res.json())
             .then((data) => setBlogDetail(data));
     });
